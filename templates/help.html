@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+.btn {
+  background-color:black;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+</style>
+
+
+<div class="jumbotron container">
+<div class="alert">
+  <h2 style="text-align:center; background-color:black; color:white; padding:15px; border-radius:5px;">ONLINE VOTING HELPS</h2>
+</div>
+<div class="row">
+    <div class="col-sm-2">
+
+    </div>
+    <div class="col-sm-4">
+      <div class="alert alert-info"><img src="{% static 'images/p6.png'%}"class="img-responsive" alt="New York" style="width:400px;">
+	  <h3 style="text-align:center;"><b>Voters</b></h3>
+    </div>
+	</div>
+	<div class="col-sm-2">
+
+    </div>
+    <div class="col-sm-4">
+      <div class="alert alert-info"><img src="{% static 'images/i5.png'%}"class="img-responsive" alt="New York" style="width:400px;">
+	  <h3 style="text-align:center;"><b>Electoral Bodies</b></h3>
+    </div>
+	</div>
+
+  </div>
+
+ <div class="row">
+    <div class="col-sm-2">
+            <img src="{% static 'images/i1.png'%}"class="img-responsive" alt="New York" style="width:200px;">
+    </div>
+    <div class="col-sm-4">
+	  <h3 style="text-align:center;"><span style="color:purple"><b>Remote Voting for a Traveling Society</b></span></br></h3>
+<h4>When looking to participate in elections, voters are often unable to do so due to travel.
+ Online voting provides a secure and private channel allowing citizens to participate on equal terms as those in country.</h4>
+	</div>
+	<div class="col-sm-2">
+            <img src="{% static 'images/i3.png'%}"class="img-responsive" alt="New York" style="width:200px;">
+    </div>
+    <div class="col-sm-4">
+      <h3 style="text-align:center;"><span style="color:purple"><b>Election Efficiencies</b></span></br></h3>
+<h4>Online voting clearly provides proven ROI when compared to alternative channels such as paper and postal voting.
+ Electoral bodies realize budget savings thanks to reduction in production costs and election management efficiencies.</h4>
+    </div>
+
+
+  </div>
+
+   <div class="row">
+    <div class="col-sm-2">
+            <img src="{% static 'images/i2.png'%}"class="img-responsive" alt="New York" style="width:200px;">
+    </div>
+    <div class="col-sm-4">
+	  <h3 style="text-align:center;"><span style="color:purple"><b>Accessibility for Persons with Disabilities</b></span></br></h3>
+<h4>For persons with disabilities, an innovative channel such as online voting is not only a convenience, it is a necessity. Online voting addresses the challenges and eliminates the barriers
+ faced by the visually impaired and illiterate voters.</h4>
+	</div>
+	<div class="col-sm-2">
+            <img src="{% static 'images/i4.png'%}"class="img-responsive" alt="New York" style="width:200px;">
+    </div>
+    <div class="col-sm-4">
+      <h3 style="text-align:center;"><span style="color:purple"><b>Improved Accuracy</b></span></br></h3>
+<h4>By reducing manual counting errors, election officials benefit from more accurate and timely results publication, integrity of votes cast and improved election auditability and credibility.</h4>
+    </div>
+
+
+  </div>
+
+<a href="et.pdf" ><button class="btn" style="width:100%"><i class="fa fa-download"></i>Download</button></a>
+
+  </div>
+
+
+{% endblock %}

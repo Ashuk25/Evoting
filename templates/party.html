@@ -1,0 +1,41 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+
+<br>
+<div class="signup-form">
+    <form action="party" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+		<!--<h2>Enter Party</h2>
+        <div class="form-group">
+			<div class="input-group">
+					<span class="input-group-addon"><i class="fa fa-user"></i></span>
+					<input type="text" class="form-control" name="name" placeholder="Party Name">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="input-group">
+					<span class="input-group-addon"><i class="fa fa-file-text"></i></span>
+                <textarea class="form-control" rows="5" cols="50" name="dec" placeholder="Description"></textarea>
+
+			</div>
+        </div>
+       <div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon">
+					<i class="fa fa-picture-o"></i>
+				</span>
+
+                <input type="file" name="img" accept="image/*">
+			</div>
+        </div>-->
+         {{ form.as_p }}
+		<div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block btn-lg">Submit</button>
+        </div>
+    </form>
+</div>
+</div>
+{% endblock %}

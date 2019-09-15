@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="partycontent container" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);">
+
+	<table class="table">
+    <thead>
+      <tr class="heading" >
+        <th style="padding:15px; font-size:16px;">SR No.</th>
+        <th style="padding:15px; font-size:16px;">PARTY NAME</th>
+		<th style="padding:15px; font-size:16px;">PARTY INFORMATION</th>
+		<th style="padding:15px; font-size:16px;">PARTY LOGO</th>
+		<th style="padding:15px; font-size:16px;">DELETE</th>
+		</tr>
+    </thead>
+    <tbody>
+	{% for dest in dest1 %}
+      <tr>
+        <td>{{ dest.id }}</td>
+        <td>{{ dest.name }}</td>
+        <td>{{ dest.dec }}</td>
+        <td><img src="{{dest.img.url}}" style="width: 50%;"></td>
+
+		<td><a href="party_info/{{ object.id }}"> <span style="font-size:25px; color:red;"><i class="fa fa-trash-o"></i></span></a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+		</div>
+{% endblock %}

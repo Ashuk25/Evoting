@@ -1,0 +1,44 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+
+<br>
+<div class="vote container" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6); text-align:center;">
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+	<table class="table">
+    <thead>
+      <tr class="heading" >
+        <th style="padding:15px; font-size:16px;">PARTY NAME</th>
+		<th style="padding:15px; font-size:16px;">PARTY LOGO</th>
+		<th style="padding:15px; font-size:16px;">VOTE</th>
+	   </tr>
+    </thead>
+    <tbody>
+	{% for dest in dest1 %}
+      <tr>
+        <td style="padding:80px;">{{ dest.name }}</td>
+		<td><img src="{{dest.img.url}}" style="width: 50%;"></td>
+		<td style="padding:80px;"><input type="radio" name="vote" value="{{ dest.name }}" style="transform:scale(3);"></td>
+
+      </tr>
+	 {% endfor %}
+    </tbody>
+  </table>
+	<div class="row">
+		<div class="col-sm-5"></div>
+		<div class="col-sm-2">
+				<div class="form-group">
+					<button type="submit" class="btn btn-primary btn-block" name="submit" style="padding:15px;"><span style="padding:15px; font-weight:bold; font-size:16px;">Submit</span></button>
+				</div>
+		</div>
+		<div class="col-sm-5"></div>
+	</div>
+	</form>
+	</div>
+
+	</div>
+
+{% endblock %}

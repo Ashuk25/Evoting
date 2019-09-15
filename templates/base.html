@@ -1,0 +1,75 @@
+{% load static %}
+{% static 'images' as baseUrl %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/admincss.css' %}">
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container-fluid ">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">E-Voting</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+       {% if user.is_superuser %}
+        <ul class="nav navbar-nav">
+			<li class="active"><a href="index">Home</a></li>
+            <li><a href="party">Party Entry</a></li>
+            <li><a href="party_info">Party Details</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li style="color: white;">Hello , {{user.username}}<a href="registration/logout"><span><i class="fa fa-user"></i></span>Logout</a></li>
+
+        </ul>
+
+
+       {% else %}
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="index">Home</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="voting">Vote</a></li>
+            {% endif %}
+
+            <li><a href="Election">Election Solution</a></li>
+			<li><a href="help">Help</a></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+            {% if user.is_authenticated %}
+            <li style="color: white;">Hello , {{user.first_name}}<a href="registration/logout"><span><i class="fa fa-user"></i></span>Logout</a></li>
+            {% else %}
+			<li><a href="registration/login"><span><i class="fa fa-sign-in"></i></span> login</a></li>
+			<li><a href="registration/register"><span><i class="fa fa-user"></i></span>Sign Up</a></li>
+            {% endif %}
+            {% endif %}
+
+		</ul>
+    </div>
+  </div>
+</nav>
+
+</div>
+{% block content %}
+
+
+
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!--<script>
+function GEEKFORGEEKS()
+{
+    var fname = document.forms["RegForm"]["fname"];
+	var lname = document.forms["RegForm"]["lname"];
+    var email = document.forms["RegForm"]["EMail"];
+    var phone = document.forms["RegForm"]["Telephone"];
+    var what =  document.forms["RegForm"]["Subject"];
+    var password = document.forms["RegForm"]["Password"];
+    var address = document.forms["RegForm"]["Address"];
+
+    if (fname.value == "")
+    {
+        window.alert("Please enter your name.");
+        fname.focus();
+        return false;
+    }
+	if (lname.value == "")
+    {
+        window.alert("Please enter your name.");
+        lname.focus();
+        return false;
+    }
+	if (email.value == "")
+    {
+        window.alert("Please enter a valid e-mail address.");
+        email.focus();
+        return false;
+    }
+	if (email.value.indexOf("@", 0) < 0)
+    {
+        window.alert("Please enter a valid e-mail address.");
+        email.focus();
+        return false;
+    }
+
+    if (address.value == "")
+    {
+        window.alert("Please enter your address.");
+        name.focus();
+        return false;
+    }
+    if (password.value == "")
+    {
+        window.alert("Please enter your password");
+        password.focus();
+        return flase;
+    }
+
+   if (Repassword.value == "")
+    {
+        window.alert("Please enter your password");
+        password.focus();
+        return flase;
+    }
+
+   if (phone.value == "")
+    {
+        window.alert("Please enter your telephone number.");
+        phone.focus();
+        return false;
+    }
+
+   if (what.selectedIndex < 1)
+    {
+        alert("Please enter your course.");
+        what.focus();
+        return false;
+    }
+
+    return true;
+}
+</script>-->
+
+<body>
+<div class="signup-form">
+    <form action="login" method="post">
+        {% csrf_token %}
+		<h2>Login</h2>
+        <div class="form-group">
+			<div class="input-group">
+					<span class="input-group-addon"><i class="fa fa-user"></i></span>
+					<input type="text" class="form-control" name="username" placeholder="Username">
+
+			</div>
+        </div>
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+				<input type="password" class="form-control" name="password" placeholder="Password">
+			</div>
+        </div>
+		<div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block btn-lg">Login</button>
+        </div>
+
+    </form>
+
+
+</div>
+<div>
+    {% for message in massages %}
+        <h3>{{message}}</h3>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+.btn {
+  background-color:black;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+</style>
+<body>
+<div class="container-fluid">
+
+<h1 style="text-align:center; font-weight:bold;">Election Training</h1>
+
+	<div class="row">
+    <div class="col-sm-2">
+
+    </div>
+    <div class="col-sm-8">
+      <img src="{% static 'images/e5.png'%}"class="img-responsive" alt="New York">
+    </div>
+    <div class="col-sm-2">
+
+    </div>
+  </div>
+
+  <div class="container">
+
+
+
+	<h3 style="font-weight:bold; text-align:center;">A fully customizable online training solution that ensures
+	   election staff are efficiently trained for the delivery of flawless
+	   election.</h3><br>
+
+		<h4 style="text-align:center;"> E-Training provides election staff with the detailed knowledge they require before
+	   and on election day via engaging, comprehensive and effective
+	   interactive learning available from any internet-connected device.
+		With election staff geographically dispersed, electoral authorities face a
+		major challenge when planning and undertaking their training. This typically
+		includes managing short schedules, providing personnel with training material,
+		and high costs associated with printing and delivery of material.Election Training helps
+		ease these burdens by delivering fully customized, role-based online election
+		training that meets the unique training needs that each election requires.</h4><br>
+
+
+
+  </div>
+
+
+<div class="jumbotron">
+<div class="row">
+    <div class="col-sm-4"><button type="button" class="btn btn-primary">1</button>
+      <img src="{% static 'images/e1.png'%}" alt="New York" style="width:300px;">
+<h3 style="text-align:center;">
+Assessment, training evaluation, and
+strategic analysis to determine
+election requirements and objectives,
+and the creation of comprehensive
+role-based custom courses.</h3>
+    </div>
+    <div class="col-sm-4"><button type="button" class="btn btn-primary">2</button>
+      <img src="{% static 'images/e2.png'%}" alt="New York" style="width:300px;">
+<h3 style="text-align:center;">
+      Online training published and assigned for pre-election
+training and election day refresh. Administrative support,
+ real-time training completion and reporting.</h3>
+    </div>
+    <div class="col-sm-4"><button type="button" class="btn btn-primary">3</button>
+      <img src="{% static 'images/e3.png'%}" alt="New York" style="width:300px;"> <h3 style="text-align:center;">
+      Thorough training cycle evaluation to
+identify areas of improvement for training content, channels and delivery.</h3>
+    </div>
+  </div>
+
+
+<a href="et.pdf" ><button class="btn" style="width:100%"><i class="fa fa-download"></i>Download</button></a>
+
+</div>
+</div>
+{% endblock %}
